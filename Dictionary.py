@@ -49,7 +49,7 @@ print("Option 1 — Check and Add your contact information")
 print("Option 2 — Search for your contact information")
 print("Option 3 — Exit the contact tracing")
 
-choice = input("What do you want to do? ")
+choice = input("What do you want to do? (1-3):  ")
 
 if choice == '1':
         print("Check first if the user exist!")
@@ -62,12 +62,17 @@ if choice == '1':
         else:
             print("This name is not yet registered!")
             print("ADD A NEW RECORD")
-            UserInfo["name"] = input("Enter your Full Name: ")
-            UserInfo["age"] = input("Enter your Age: ")
-            UserInfo["address"] = input("Enter your Address: ")
-            UserInfo["number"] = input("Enter your Phone number: ")
-            UserInfo["school"] = input("Enter your School: ")
-            UserInfo["email"] = input("Enter your E-mail: ")
-            UserInfo["bday"] = input("Enter your Birthday: ")
+            UserInfo["name"] = input("Enter your Full Name:  ")
+            UserInfo["age"] = input("Enter your Age:  ")
+            UserInfo["address"] = input("Enter your Address:  ")
+            UserInfo["number"] = input("Enter your Phone number:  ")
+            UserInfo["school"] = input("Enter your School:  ")
+            UserInfo["email"] = input("Enter your E-mail:  ")
+            UserInfo["bday"] = input("Enter your Birthday:  ")
             user.append(UserInfo)
             print("Record Saved!")
+    
+if choice == '2':
+    print("Search for your contact information")
+    check = list(UserInfo.values())
+    find = input("Enter your Full Name:  ")
