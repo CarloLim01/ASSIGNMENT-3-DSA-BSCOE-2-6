@@ -38,6 +38,9 @@
 # Phone number: 1234567890What do you want to do? (1-3): 3
 # Exit? n
 
+
+UserInfo = {}
+
 print("WELCOME TO CONTACT TRACING")
 
 #menu option
@@ -47,4 +50,12 @@ print("Option 2 — Search for your contact information")
 print("Option 3 — Exit the contact tracing")
 
 choice = input("What do you want to do? ")
+
+UserInfo["name"] = input("Enter your Full Name: ")
+UserInfo["age"] = input("Enter your Age: ")
+UserInfo["address"] = input("Enter your Address: ")
+UserInfo["number"] = input("Enter your Phone number: ")
+UserInfo["school"] = input("Enter your School: ")
+UserInfo["email"] = input("Enter your E-mail: ")
+UserInfo["bday"] = input("Enter your Birthday: ")
 
