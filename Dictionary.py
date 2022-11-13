@@ -76,3 +76,11 @@ if choice == '2':
     print("Search for your contact information")
     check = list(UserInfo.values())
     find = input("Enter your Full Name:  ")
+
+
+if find in check:
+    out = None
+    for key in user:
+        if key['name'] == find:
+            out = key
+            break
