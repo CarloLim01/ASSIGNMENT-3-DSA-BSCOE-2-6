@@ -38,49 +38,57 @@
 # Phone number: 1234567890What do you want to do? (1-3): 3
 # Exit? n
 
-user = {}
+user = []
 UserInfo = {}
+menu = ['1','2','3']
 
+choice = ""
 print("WELCOME TO CONTACT TRACING")
+while(choice != "3"):
+    print("Menu:  ")
+    print("Option 1 — Check and Add your contact information")
+    print("Option 2 — Search for your contact information")
+    print("Option 3 — Exit the contact tracing")
 
-#menu option
-print("Menu:")
-print("Option 1 — Check and Add your contact information")
-print("Option 2 — Search for your contact information")
-print("Option 3 — Exit the contact tracing")
-
-choice = input("What do you want to do? (1-3):  ")
-
-if choice == '1':
+    choice = input("What do you want to do? (1-3):  ")
+    
+    if choice == '1':
         print("Check first if the user exist!")
-        out = list(UserInfo.values())
-        val = input("Enter your Full Name: ")
+        Out = list(UserInfo.values())
+        Name = input("Full name: ")
 
-        if val in out:
+        if Name in Out:
             print("This name already exists!")
 
         else:
             print("This name is not yet registered!")
             print("ADD A NEW RECORD")
-            UserInfo["name"] = input("Enter your Full Name:  ")
-            UserInfo["age"] = input("Enter your Age:  ")
-            UserInfo["address"] = input("Enter your Address:  ")
-            UserInfo["number"] = input("Enter your Phone number:  ")
-            UserInfo["school"] = input("Enter your School:  ")
-            UserInfo["email"] = input("Enter your E-mail:  ")
-            UserInfo["bday"] = input("Enter your Birthday:  ")
+            UserInfo["name"] = input("Full name:  ")
+            UserInfo["age"] = input("Age:  ")
+            UserInfo["address"] = input("Address:  ")
+            UserInfo["number"] = input("Phone number:  ")
+            UserInfo["school"] = input("School:  ")
+            UserInfo["email"] = input("E-mail:  ")
+            UserInfo["bday"] = input("Birthday:  ")
             user.append(UserInfo)
             print("Record Saved!")
-    
-if choice == '2':
-    print("Search for your contact information")
-    check = list(UserInfo.values())
-    find = input("Enter your Full Name:  ")
 
+    if choice == '2':
+        print("SEARCH USER")
+        check = list(UserInfo.values())
+        find = input("Full name: ")
 
-if find in check:
-    out = None
-    for key in user:
-        if key['name'] == find:
-            out = key
-            break
+        if find in check:
+            Out = None
+            for key in choice:
+                for key in UserInfo:
+                    print(key, ":", UserInfo[key])
+
+        else:
+            print("This name is not yet registered!")
+
+    if choice == '3':
+        print(f"THANK YOU FOR USING CONTACT TRACING")
+        exit()
+    else:
+        print("Input is invalid!")
